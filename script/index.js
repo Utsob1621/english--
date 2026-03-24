@@ -112,7 +112,42 @@ const learnBtnContainer = () => {
   }
 };
 
+const fcqBtnContainer = () => {
+  const fcqBtn = document.getElementById("fcq");
+  const fcqSection = document.getElementById("fcq-section");
 
+  if (fcqBtn && fcqSection) {
+    fcqBtn.addEventListener("click", () => {
+      fcqSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+  }
+};
+
+
+const logoutBtnContainer = () => {
+  const logoutBtn = document.getElementById("logout");
+  const bannerSection = document.getElementById("banner-section");
+  const contentContainer  = document.getElementById("content-container");
+  const navContainer  = document.getElementById("nav-container");
+
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", () => {
+
+        bannerSection.classList.remove("hidden")
+        contentContainer.classList.add("hidden");
+        navContainer.classList.add("hidden");
+
+        bannerSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
+    });
+  }
+};
 
 
 document.addEventListener("DOMContentLoaded", () => {
